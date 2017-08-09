@@ -10,21 +10,16 @@
 * @version 1.0
 */
 get_header(); ?>
-
-
 <div id="wooclass">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php the_title(); ?>
-
+				<?php the_title(); ?>
 				<?php endwhile; ?>
 				
 			</div>
 		</div>
 	</div>
 </div>
-
-<?php get_footer();
+<?php get_footer(); 
