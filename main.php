@@ -39,10 +39,22 @@ if (!function_exists('ul_pro_get_option')) {
 			return;
 		}
 		$woo_settings = array(
-			'text-count' => 75,
-			'productcolm' => 'col-md-6',
-			'popupbtn' => '[...]',
-			'woo-popup' => 'red'
+			// 'text-count' => 75,
+			// 'productcolm' => 'col-md-6',
+			// 'popupbtn' => '[...]',
+			// 'woo-popup' => 'red',
+			'googleapi' => 'AIzaSyDDJS7wVeKbFe74xYOd4dd0MrfyMEFjo6A',
+			'columncontent' => '
+					<div class="col-md-3 style1">
+						<div class="propertythumb"><a href="{$link}"><img src="{$img}" alt=""></a></div>
+						<div class="properties_info">
+							<h2>{$title}</h2>
+							<p>{$address}</p>
+							<h3>${$price}</h3>
+							<a href="{$link}">Read More</a>
+						</div>
+					</div>	
+			'
 			);
 		if ( get_option($key) != '' ) {
 			return get_option($key);

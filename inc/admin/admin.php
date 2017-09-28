@@ -31,9 +31,10 @@ if (is_admin()):
 	// Setting Fields
 	add_action( 'admin_init', 'ul_pro_register_woo_settings' );
 	function ul_pro_register_woo_settings() {
-		register_setting( 'woo-settings-group', 'text-count' );
-		register_setting( 'woo-settings-group', 'popupbtn' );
-		register_setting( 'woo-settings-group', 'productcolm' );
+		register_setting( 'ul-pro-settings-group', 'googleapi' );
+		// register_setting( 'ul-pro-settings-group', 'text-count' );
+		// register_setting( 'ul-pro-settings-group', 'productcolm' );
+		register_setting( 'ul-pro-settings-group', 'columncontent' );
 	}
 	
 endif;	
