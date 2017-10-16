@@ -52,7 +52,7 @@
 		<h2 id="shortcode">How to use</h2>
 		<fieldset class="woo_fieldset">
 			<legend><h4 class="sec-title">Using Shortcode</h4></legend>
-			<p>You just need to put the shortcode wherever you want <code>[ultimate-property]</code></p>
+			<p>You just need to put the shortcode wherever you want <code>[ultimate-property category=""]</code></p>
 			<p>For Search <code>[ultimate-property-search]</code></p>
 		</fieldset>
 	</div>
