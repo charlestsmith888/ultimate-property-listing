@@ -91,70 +91,305 @@ function UL_taxonomy() {
 
 add_action( 'init', 'UL_taxonomy' );
 
-// Custom fields
-function ul_pro_get_meta_field( $value ) {
-	global $post;
-	$field = get_post_meta( $post->ID, $value, true );
-	if ( ! empty( $field ) ) {
-		return is_array( $field ) ? stripslashes_deep( $field ) : stripslashes( wp_kses_decode_entities( $field ) );
-	} else {
-		return false;
-	}
+
+
+// taxonomy Emirates
+function cs_emirate() {
+
+	$labels = array(
+		'name'                  => _x( 'Location', 'Taxonomy Location', 'text-domain' ),
+		'singular_name'         => _x( 'Location', 'Taxonomy Emirate', 'text-domain' ),
+		'search_items'          => __( 'Search Location', 'text-domain' ),
+		'popular_items'         => __( 'Popular Location', 'text-domain' ),
+		'all_items'             => __( 'All Location', 'text-domain' ),
+		'parent_item'           => __( 'Parent Emirate', 'text-domain' ),
+		'parent_item_colon'     => __( 'Parent Emirate', 'text-domain' ),
+		'edit_item'             => __( 'Edit Emirate', 'text-domain' ),
+		'update_item'           => __( 'Update Emirate', 'text-domain' ),
+		'add_new_item'          => __( 'Add New Emirate', 'text-domain' ),
+		'new_item_name'         => __( 'New Emirate Name', 'text-domain' ),
+		'add_or_remove_items'   => __( 'Add or remove Location', 'text-domain' ),
+		'choose_from_most_used' => __( 'Choose from most used Location', 'text-domain' ),
+		'menu_name'             => __( 'Location', 'text-domain' ),
+	);
+
+	$args = array(
+		'labels'            => $labels,
+		'public'            => true,
+		'show_in_nav_menus' => true,
+		'show_admin_column' => false,
+		'hierarchical'      => true,
+		'show_tagcloud'     => true,
+		'show_ui'           => true,
+		'query_var'         => true,
+		'rewrite'           => true,
+		'query_var'         => true,
+		'capabilities'      => array(),
+	);
+
+	register_taxonomy( 'location', array( 'property' ), $args );
 }
-function ul_pro_custom_fields_add_meta_box() {
-	add_meta_box(
-		'custom_fields-custom-fields',
-		__( 'Custom Fields', 'custom_fields' ),
-		'ul_pro_custom_fields_html',
-		'property',
-		'advanced',
-		'high'
-		);
+
+add_action( 'init', 'cs_emirate' );
+
+
+// taxonomy Types
+function cs_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Types', 'Taxonomy Types', 'text-domain' ),
+		'singular_name'         => _x( 'Type', 'Taxonomy Type', 'text-domain' ),
+		'search_items'          => __( 'Search Types', 'text-domain' ),
+		'popular_items'         => __( 'Popular Types', 'text-domain' ),
+		'all_items'             => __( 'All Types', 'text-domain' ),
+		'parent_item'           => __( 'Parent Type', 'text-domain' ),
+		'parent_item_colon'     => __( 'Parent Type', 'text-domain' ),
+		'edit_item'             => __( 'Edit Type', 'text-domain' ),
+		'update_item'           => __( 'Update Type', 'text-domain' ),
+		'add_new_item'          => __( 'Add New Type', 'text-domain' ),
+		'new_item_name'         => __( 'New Type Name', 'text-domain' ),
+		'add_or_remove_items'   => __( 'Add or remove Types', 'text-domain' ),
+		'choose_from_most_used' => __( 'Choose from most used Types', 'text-domain' ),
+		'menu_name'             => __( 'Type', 'text-domain' ),
+	);
+
+	$args = array(
+		'labels'            => $labels,
+		'public'            => true,
+		'show_in_nav_menus' => true,
+		'show_admin_column' => false,
+		'hierarchical'      => true,
+		'show_tagcloud'     => true,
+		'show_ui'           => true,
+		'query_var'         => true,
+		'rewrite'           => true,
+		'query_var'         => true,
+		'capabilities'      => array(),
+	);
+
+	register_taxonomy( 'types', array( 'property' ), $args );
 }
-add_action( 'add_meta_boxes', 'ul_pro_custom_fields_add_meta_box' );
-function ul_pro_custom_fields_html( $post) {
-	wp_nonce_field( '_custom_fields_nonce', 'custom_fields_nonce' ); ?>
-	<p>
-		<label for="custom_fields_address"><?php _e( 'Address', 'custom_fields' ); ?></label><br>
-		<input style="width: 100%;" type="text" name="custom_fields_address" size="90"  id="custom_fields_address" value="<?php echo ul_pro_get_meta_field( 'custom_fields_address' ); ?>">
-	</p>
-	<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo trim(ul_pro_get_option('googleapi')); ?>&libraries=places"></script>
-	<!-- <script src="<?php //echo ULPROASSETS; ?>/vendor/geolocation/jquery.min.js"></script> -->
-	<script src="<?php echo ULPROASSETS; ?>/vendor/geolocation/jquery.geocomplete.js?ver=4.8.1"></script>
-	<script src="<?php echo ULPROASSETS; ?>/vendor/geolocation/logger1.js?ver=4.8.1"></script>
-	<p>
-		<label for="custom_fields_price"><?php _e( 'Price', 'custom_fields' ); ?></label><br>
-		<input style="width: 100%;" type="text" name="custom_fields_price" id="custom_fields_price" value="<?php echo ul_pro_get_meta_field( 'custom_fields_price' ); ?>">
-	</p>
-	<?php
+
+add_action( 'init', 'cs_type' );
+
+// taxonomy Bedrooms
+function cs_bedroom() {
+
+	$labels = array(
+		'name'                  => _x( 'Bedrooms', 'Taxonomy Bedrooms', 'text-domain' ),
+		'singular_name'         => _x( 'Bedroom', 'Taxonomy Bedroom', 'text-domain' ),
+		'search_items'          => __( 'Search Bedrooms', 'text-domain' ),
+		'popular_items'         => __( 'Popular Bedrooms', 'text-domain' ),
+		'all_items'             => __( 'All Bedrooms', 'text-domain' ),
+		'parent_item'           => __( 'Parent Bedroom', 'text-domain' ),
+		'parent_item_colon'     => __( 'Parent Bedroom', 'text-domain' ),
+		'edit_item'             => __( 'Edit Bedroom', 'text-domain' ),
+		'update_item'           => __( 'Update Bedroom', 'text-domain' ),
+		'add_new_item'          => __( 'Add New Bedroom', 'text-domain' ),
+		'new_item_name'         => __( 'New Bedroom Name', 'text-domain' ),
+		'add_or_remove_items'   => __( 'Add or remove Bedrooms', 'text-domain' ),
+		'choose_from_most_used' => __( 'Choose from most used Bedrooms', 'text-domain' ),
+		'menu_name'             => __( 'Bedroom', 'text-domain' ),
+	);
+
+	$args = array(
+		'labels'            => $labels,
+		'public'            => true,
+		'show_in_nav_menus' => true,
+		'show_admin_column' => false,
+		'hierarchical'      => true,
+		'show_tagcloud'     => true,
+		'show_ui'           => true,
+		'query_var'         => true,
+		'rewrite'           => true,
+		'query_var'         => true,
+		'capabilities'      => array(),
+	);
+
+	register_taxonomy( 'bedroom', array( 'property' ), $args );
 }
-function ul_pro_custom_fields_save( $post_id ) {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-	if ( ! isset( $_POST['custom_fields_nonce'] ) || ! wp_verify_nonce( $_POST['custom_fields_nonce'], '_custom_fields_nonce' ) ) return;
-	if ( ! current_user_can( 'edit_post', $post_id ) ) return;
-	if ( isset( $_POST['custom_fields_address'] ) )
-		update_post_meta( $post_id, 'custom_fields_address', esc_attr( $_POST['custom_fields_address'] ) );
-	if ( isset( $_POST['custom_fields_price'] ) )
-		update_post_meta( $post_id, 'custom_fields_price', esc_attr( $_POST['custom_fields_price'] ) );
+
+add_action( 'init', 'cs_bedroom' );
+
+
+// taxonomy developers
+function cs_developer() {
+
+	$labels = array(
+		'name'                  => _x( 'developers', 'Taxonomy developers', 'text-domain' ),
+		'singular_name'         => _x( 'developer', 'Taxonomy developer', 'text-domain' ),
+		'search_items'          => __( 'Search developers', 'text-domain' ),
+		'popular_items'         => __( 'Popular developers', 'text-domain' ),
+		'all_items'             => __( 'All developers', 'text-domain' ),
+		'parent_item'           => __( 'Parent developer', 'text-domain' ),
+		'parent_item_colon'     => __( 'Parent developer', 'text-domain' ),
+		'edit_item'             => __( 'Edit developer', 'text-domain' ),
+		'update_item'           => __( 'Update developer', 'text-domain' ),
+		'add_new_item'          => __( 'Add New developer', 'text-domain' ),
+		'new_item_name'         => __( 'New developer Name', 'text-domain' ),
+		'add_or_remove_items'   => __( 'Add or remove developers', 'text-domain' ),
+		'choose_from_most_used' => __( 'Choose from most used developers', 'text-domain' ),
+		'menu_name'             => __( 'developer', 'text-domain' ),
+	);
+
+	$args = array(
+		'labels'            => $labels,
+		'public'            => true,
+		'show_in_nav_menus' => true,
+		'show_admin_column' => false,
+		'hierarchical'      => true,
+		'show_tagcloud'     => true,
+		'show_ui'           => true,
+		'query_var'         => true,
+		'rewrite'           => true,
+		'query_var'         => true,
+		'capabilities'      => array(),
+	);
+
+	register_taxonomy( 'developer', array( 'property' ), $args );
 }
-add_action( 'save_post', 'ul_pro_custom_fields_save' );
-/*
-Usage: ul_pro_get_meta_field( 'custom_fields_address' )
-Usage: ul_pro_get_meta_field( 'custom_fields_price' )
-*/
+
+add_action( 'init', 'cs_developer' );
 
 
 
+// taxonomy development
+function cs_development() {
+
+	$labels = array(
+		'name'                  => _x( 'development', 'Taxonomy development', 'text-domain' ),
+		'singular_name'         => _x( 'development', 'Taxonomy development', 'text-domain' ),
+		'search_items'          => __( 'Search development', 'text-domain' ),
+		'popular_items'         => __( 'Popular development', 'text-domain' ),
+		'all_items'             => __( 'All development', 'text-domain' ),
+		'parent_item'           => __( 'Parent development', 'text-domain' ),
+		'parent_item_colon'     => __( 'Parent development', 'text-domain' ),
+		'edit_item'             => __( 'Edit development', 'text-domain' ),
+		'update_item'           => __( 'Update development', 'text-domain' ),
+		'add_new_item'          => __( 'Add New development', 'text-domain' ),
+		'new_item_name'         => __( 'New development Name', 'text-domain' ),
+		'add_or_remove_items'   => __( 'Add or remove development', 'text-domain' ),
+		'choose_from_most_used' => __( 'Choose from most used development', 'text-domain' ),
+		'menu_name'             => __( 'development', 'text-domain' ),
+	);
+
+	$args = array(
+		'labels'            => $labels,
+		'public'            => true,
+		'show_in_nav_menus' => true,
+		'show_admin_column' => false,
+		'hierarchical'      => true,
+		'show_tagcloud'     => true,
+		'show_ui'           => true,
+		'query_var'         => true,
+		'rewrite'           => true,
+		'query_var'         => true,
+		'capabilities'      => array(),
+	);
+
+	register_taxonomy( 'development', array( 'property' ), $args );
+}
+
+add_action( 'init', 'cs_development' );
 
 
+// taxonomy completion
+function cs_completion() {
+
+	$labels = array(
+		'name'                  => _x( 'completion', 'Taxonomy completion', 'text-domain' ),
+		'singular_name'         => _x( 'completion', 'Taxonomy completion', 'text-domain' ),
+		'search_items'          => __( 'Search completion', 'text-domain' ),
+		'popular_items'         => __( 'Popular completion', 'text-domain' ),
+		'all_items'             => __( 'All completion', 'text-domain' ),
+		'parent_item'           => __( 'Parent completion', 'text-domain' ),
+		'parent_item_colon'     => __( 'Parent completion', 'text-domain' ),
+		'edit_item'             => __( 'Edit completion', 'text-domain' ),
+		'update_item'           => __( 'Update completion', 'text-domain' ),
+		'add_new_item'          => __( 'Add New completion', 'text-domain' ),
+		'new_item_name'         => __( 'New completion Name', 'text-domain' ),
+		'add_or_remove_items'   => __( 'Add or remove completion', 'text-domain' ),
+		'choose_from_most_used' => __( 'Choose from most used completion', 'text-domain' ),
+		'menu_name'             => __( 'completion', 'text-domain' ),
+	);
+
+	$args = array(
+		'labels'            => $labels,
+		'public'            => true,
+		'show_in_nav_menus' => true,
+		'show_admin_column' => false,
+		'hierarchical'      => true,
+		'show_tagcloud'     => true,
+		'show_ui'           => true,
+		'query_var'         => true,
+		'rewrite'           => true,
+		'query_var'         => true,
+		'capabilities'      => array(),
+	);
+
+	register_taxonomy( 'completion', array( 'property' ), $args );
+}
+
+add_action( 'init', 'cs_completion' );
 
 
+//add in function in function.php
+function pagination($pages = '', $range = 4){  
+     $showitems = ($range * 2)+1;  
+ 
+     global $paged;
+     if(empty($paged)) $paged = 1;
+ 
+     if($pages == '')
+     {
+         global $wp_query;
+         $pages = $wp_query->max_num_pages;
+         if(!$pages)
+         {
+             $pages = 1;
+         }
+     }   
+ 
+        if(1 != $pages)
+     {
+         // echo "<div class=\"pagination\">
+         // <span>Page ".$paged." of ".$pages."</span>";         
+         echo "<div class=\"pagination\">";
+			previous_posts_link('Prev');
+         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo; First</a>";
+         if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo; Previous</a>";
+ 
+         for ($i=1; $i <= $pages; $i++)
+         {
+             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
+             {
+                 echo ($paged == $i)? "<span class=\"current\">".$i."</span>":"<a href='".get_pagenum_link($i)."' class=\"inactive\">".$i."</a>";
+             }
+         }
+ 
+         if ($paged < $pages && $showitems < $pages) echo "<a href=\"".get_pagenum_link($paged + 1)."\">Next &rsaquo;</a>";  
+         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>Last &raquo;</a>";
+            next_posts_link('Next');
+         echo "</div>\n";
+     }
+}
 
 
-
-
-
-
+function pr($data = array()){
+	echo "<pre>";
+	print_r($data);
+	echo "</pre>";
+}
+function number_series($number){
+	$ends = array('th','st','nd','rd','th','th','th','th','th','th');
+	if (($number %100) >= 11 && ($number%100) <= 13)
+		return $abbreviation = $number. 'th';
+	else
+		return $abbreviation = $number. $ends[$number % 10];
+}
+function ul_price($price){
+	return ul_pro_get_option('ul_currency').' '.$price;
+}
 
 
 
@@ -192,9 +427,8 @@ if (is_admin()):
 	add_action( 'admin_init', 'ul_pro_register_woo_settings' );
 	function ul_pro_register_woo_settings() {
 		register_setting( 'ul-pro-settings-group', 'googleapi' );
-		// register_setting( 'ul-pro-settings-group', 'text-count' );
-		// register_setting( 'ul-pro-settings-group', 'productcolm' );
 		register_setting( 'ul-pro-settings-group', 'columncontent' );
+		register_setting( 'ul-pro-settings-group', 'ul_currency' );
 	}
 	
 endif;	
