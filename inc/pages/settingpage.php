@@ -4,11 +4,15 @@
 	<table class="form-table">
 		<tr class="wrap-icon-bg-color" valign="top">
 			<th scope="row">Google API Key</th>
-			<td><input type="text" name="googleapi" id="googleapi" value="<?php echo ul_pro_get_option('googleapi') ?>" /></td>
+			<td><input type="text" name="googleapi" id="googleapi" value="<?php echo ul_pro_get_option('googleapi'); ?>" /></td>
 		</tr>
+		<tr class="wrap-icon-bg-color" valign="top">
+			<th scope="row">Currency</th>
+			<td><input type="text" name="ul_currency" id="ul_currency" value="<?php echo ul_pro_get_option('ul_currency'); ?>" /></td>
+		</tr>		
 <!-- 		<tr class="wrap-icon-bg-color" valign="top">
 			<th scope="row">Text Count</th>
-			<td><input type="text" name="text-count" id="text-count" value="<?php echo ul_pro_get_option('text-count') ?>" /></td>
+			<td><input type="text" name="text-count" id="text-count" value="<?php //echo ul_pro_get_option('text-count') ?>" /></td>
 		</tr> -->
 <!-- 		<tr class="wrap-icon-bg-color" valign="top">
 			<th scope="row">Product Column</th>

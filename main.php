@@ -28,10 +28,26 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 define('ULPROURL', dirname(__FILE__));
 define('ULPROASSETS', plugins_url('/ultimate-property-listing/assets/'));
-// Public Code
-require_once ULPROURL.'/inc/public/public.php';
+
+$plugin = plugin_basename(__FILE__);
+define('ULMAINPATH', $dir = plugin_dir_path( __FILE__ ));
+define('ULMAINURL', plugin_dir_url($plugin));
+
+
 // Admin Code
 require_once ULPROURL.'/inc/admin/admin.php';
+require ULPROURL.'/inc/admin/ul_custom_taxonomy.php';
+require ULPROURL.'/inc/admin/ul_custom_fiels.php';
+require ULPROURL.'/inc/admin/ul_shortcodes.php';
+require ULPROURL.'/inc/admin/ul_ajax.php';
+
+
+
+// Public Code
+require_once ULPROURL.'/inc/public/public.php';
+
+
+
 // get options custom
 if (!function_exists('ul_pro_get_option')) {
 	function ul_pro_get_option($key='') {
@@ -43,6 +59,7 @@ if (!function_exists('ul_pro_get_option')) {
 			// 'productcolm' => 'col-md-6',
 			// 'popupbtn' => '[...]',
 			// 'woo-popup' => 'red',
+			'ul_currency' => 'AED',
 			'googleapi' => 'AIzaSyDDJS7wVeKbFe74xYOd4dd0MrfyMEFjo6A',
 			'columncontent' => '
 					<div class="col-md-3 style1">
@@ -63,3 +80,6 @@ if (!function_exists('ul_pro_get_option')) {
 		}
 	}
 }
+
+add_post_type_support( 'page', 'excerpt' );
+
