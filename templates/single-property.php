@@ -30,7 +30,10 @@ $property_pdf = get_post_meta( $post->ID, 'property_pdf', true );
 $property_attachment = get_post_meta( $post->ID, 'property_attachment', true );
 $property_videoembeded = get_post_meta( $post->ID, 'property_videoembeded', true );
 
+<<<<<<< HEAD
 $is_sold = get_post_meta( $post->ID, 'is_sold_field');
+=======
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
 ?>
 
 <style>.single-featured-image-header {display: none;}</style>
@@ -39,6 +42,7 @@ $is_sold = get_post_meta( $post->ID, 'is_sold_field');
 <?php while ( have_posts() ) : the_post(); $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(),'full', true);  ?>
 
 
+<<<<<<< HEAD
   <div class="banner" style="background: url(<?php echo $thumbnail[0]; ?>) no-repeat center / cover !important"> 
     <div class="main-contents">
     <div class="banner-inner">
@@ -70,13 +74,29 @@ if ($ul_fields->price_section_get_meta( 'cs_price' )) {
   </div>
 
   <div class="main-contents">
+=======
+  <div class="banner" style="background: url(<?php echo $thumbnail[0]; ?>) no-repeat center !important"> 
+    <div class="banner-inner">
+      <h3>Starting from</h3>
+      <h4><?php echo ul_price($ul_fields->price_section_get_meta( 'cs_price' )); ?></h4>
+      <h5><?php the_title(); ?></h5>
+      <!-- <h5>STUNNING VIEWS OF THE GOLF COURSE</h5> -->
+    </div>
+  </div>
+
+  <div class="main-content">
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
     <div class="lhs">
       <div class="entry-content">
         <?php the_content(); ?>
       <div class="table-area">
         <h3>6 Months Payment Plan (20% Upfront Discount)</h3>
         <ul>
+<<<<<<< HEAD
           <li> <a href="#" class="btn-modal" data-toggleModal="myModal6"><span class="fa fa-file-pdf-o"></span> Brochure </a></li>
+=======
+          <li> <a href="#"><span class="fa fa-file-pdf-o"></span> Brochure </a></li>
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
 
 <?php if (!empty($property_pdf)): ?>
 <li> <a  href="<?= wp_get_attachment_url( $property_pdf);  ?>"><span class="fa fa-object-group"></span> Floor Plan </a></li>
@@ -86,17 +106,26 @@ if ($ul_fields->price_section_get_meta( 'cs_price' )) {
           <li><a href="<?= wp_get_attachment_url( $property_attachment);  ?>" target="_blank"><span class="fa fa-map-o"></span> Master Plan </a></li>
 <?php endif; ?>
 
+<<<<<<< HEAD
           <li> <a  href="#" class="btn-modal" data-toggleModal="myModal7"><span class="fa fa-table"></span> Availability List</a></li>
           <li> <a data-toggle="modal" href="#" class="btn-modal" data-toggleModal="myModal8"><span class="fa fa-money"></span> Payment Plan</a> </li>
         </ul>
       </div>
    
+=======
+          <li> <a  href="#"><span class="fa fa-table"></span> Availability List</a></li>
+          <li> <a data-toggle="modal" href="#contactPP"><span class="fa fa-money"></span> Payment Plan</a> </li>
+        </ul>
+      </div>
+
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
   <?php if (!empty($property_videoembeded)): echo htmlspecialchars_decode($property_videoembeded); endif;  ?>
 
       
 
 
         </div>
+<<<<<<< HEAD
 
 
 <div style="clear: both;"></div>
@@ -108,10 +137,13 @@ if ($ul_fields->price_section_get_meta( 'cs_price' )) {
 
 
 
+=======
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
     </div>
 
 
     <div class="rhs">
+<<<<<<< HEAD
       <div class="project-contactbar project-contactbar-table "> 
   <?php if( $image_id ) {
         $thumbnail = wp_get_attachment_image_src($image_id,'thumbnail', true); ?>
@@ -125,6 +157,16 @@ if ($ul_fields->price_section_get_meta( 'cs_price' )) {
        <a href="#" class="project-mail btn-modal" id="myBtn3" data-toggleModal="myModal3"> <i class="fa fa-envelope-o"></i> <span class="table-desktop">Register your interest</span> 
        <a href="#" class="project-meeting btn-modal" id="myBtn2" data-toggleModal="myModal2"> <i class="fa fa-handshake-o"></i> <span class="table-desktop">Request a Meeting</span></a> 
        </div>
+=======
+      <?php if( $image_id ) {
+        $thumbnail = wp_get_attachment_image_src($image_id,'full', true); ?>
+        <img src="<?php echo $thumbnail[0]; ?>" alt="">
+      <?php } ?>
+      <div class="project-contactbar project-contactbar-table "> 
+        <a href="#showphone-note" id="myBtn"  class="project-call"> <i class="fa fa-phone"></i> <span> <strong> Call now </strong></span> </a> 
+        <a target="_blank" href="https://web.whatsapp.com/send?phone=<?php echo $developer_Whatsapp; ?>&amp;text=Hi, I am Interested in 'Amora in Golf Verde'. Kindly let me know when we can meet and discuss about the project. Thank you. https://dxboffplan.com/properties/amora-golf-verde-damac/" class="table-desktop project-whatsapp"><i class="fa fa-whatsapp"></i> <span>Chat on WhatsApp</span></a> 
+        <a href="#" class="project-mail"> <i class="fa fa-envelope-o"></i> <span class="table-desktop">Register your interest</span> <a href="#" class="project-meeting" data-toggle="modal"> <i class="fa fa-handshake-o"></i> <span class="table-desktop">Request a Meeting</span></a> </div>
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
       </div>
 
 
@@ -133,6 +175,10 @@ if ($ul_fields->price_section_get_meta( 'cs_price' )) {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
       <div id="myModal" class="modal">
         <div class="modal-content"> <span class="close">&times;</span> 
 
@@ -149,6 +195,7 @@ if ($ul_fields->price_section_get_meta( 'cs_price' )) {
       </div>
 
 
+<<<<<<< HEAD
 
 <div id="myModal2" class="modal">
   <form class="submitform" action="" method="POST">
@@ -408,17 +455,23 @@ if ($ul_fields->price_section_get_meta( 'cs_price' )) {
   </div>
 
 
+=======
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
     </div>
 
 
 
+<<<<<<< HEAD
     <div style="clear: both;"></div>
 
+=======
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
 
 
   <?php endwhile; ?>
 
 
+<<<<<<< HEAD
 
 
 
@@ -478,10 +531,40 @@ if ($ul_fields->price_section_get_meta( 'cs_price' )) {
     </div>
 
 
+=======
+  <script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
 
 
 
 
+<<<<<<< HEAD
 <?php get_footer(); ?>
 
 
@@ -561,3 +644,11 @@ jQuery(document).on('submit', '.submitform', function(event) {
  });
 });
 </script>
+=======
+
+
+
+
+
+<?php get_footer();
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e

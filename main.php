@@ -29,18 +29,24 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 define('ULPROURL', dirname(__FILE__));
 define('ULPROASSETS', plugins_url('/ultimate-property-listing/assets/'));
 
+<<<<<<< HEAD
 $plugin = plugin_basename(__FILE__);
 define('ULMAINPATH', $dir = plugin_dir_path( __FILE__ ));
 define('ULMAINURL', plugin_dir_url($plugin));
 
 
+=======
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
 // Admin Code
 require_once ULPROURL.'/inc/admin/admin.php';
 require ULPROURL.'/inc/admin/ul_custom_taxonomy.php';
 require ULPROURL.'/inc/admin/ul_custom_fiels.php';
 require ULPROURL.'/inc/admin/ul_shortcodes.php';
+<<<<<<< HEAD
 require ULPROURL.'/inc/admin/ul_ajax.php';
 
+=======
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
 
 
 // Public Code
@@ -81,5 +87,8 @@ if (!function_exists('ul_pro_get_option')) {
 	}
 }
 
+<<<<<<< HEAD
 add_post_type_support( 'page', 'excerpt' );
+=======
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
 

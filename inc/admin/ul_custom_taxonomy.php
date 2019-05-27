@@ -10,11 +10,16 @@ if( ! class_exists( 'Showcase_Taxonomy_Images' ) ) {
      * Initialize the class and start calling our hooks and filters
      */
      public function init() {
+<<<<<<< HEAD
      // Developer
+=======
+     // Image actions
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
      add_action( 'developer_add_form_fields', array( $this, 'add_category_image' ), 10, 2 );
      add_action( 'created_developer', array( $this, 'save_category_image' ), 10, 2 );
      add_action( 'developer_edit_form_fields', array( $this, 'update_category_image' ), 10, 2 );
      add_action( 'edited_developer', array( $this, 'updated_category_image' ), 10, 2 );
+<<<<<<< HEAD
 
      // Development
      add_action( 'development_add_form_fields', array( $this, 'add_category_image' ), 10, 2 );
@@ -23,12 +28,18 @@ if( ! class_exists( 'Showcase_Taxonomy_Images' ) ) {
      add_action( 'edited_development', array( $this, 'updated_category_image' ), 10, 2 );
 
      
+=======
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
      add_action( 'admin_enqueue_scripts', array( $this, 'load_media' ) );
      add_action( 'admin_footer', array( $this, 'add_script' ) );
    }
 
    public function load_media() {
+<<<<<<< HEAD
      if( ! isset( $_GET['taxonomy'] ) || $_GET['taxonomy'] != 'developer' || $_GET['taxonomy'] != 'development') {
+=======
+     if( ! isset( $_GET['taxonomy'] ) || $_GET['taxonomy'] != 'developer' ) {
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
        return;
      }
      wp_enqueue_media();
@@ -41,6 +52,7 @@ if( ! class_exists( 'Showcase_Taxonomy_Images' ) ) {
   
    public function add_category_image( $taxonomy ) { ?>
 		
+<<<<<<< HEAD
 
     <?php if ($taxonomy != 'development'): ?>
 
@@ -65,6 +77,21 @@ if( ! class_exists( 'Showcase_Taxonomy_Images' ) ) {
        <label for="featured_developer"><?php _e( 'Check if the developer is featured', 'showcase' ); ?></label>
        <?php $featured_developer = get_term_meta( $term->term_id, 'featured_developer', true ); ?>
        <input type="checkbox" name="featured_developer" value="1" <?php  echo (!empty($featured_developer)) ? 'checked' : '' ; ?>>
+=======
+  <div class="form-field term-group">
+       <label for="developer_phone"><?php _e( 'Phone', 'showcase' ); ?></label>
+       <input type="text" name="developer_phone">
+   </div>
+
+  <div class="form-field term-group">
+       <label for="developer_email"><?php _e( 'Email', 'showcase' ); ?></label>
+       <input type="text" name="developer_email">
+   </div>   
+
+  <div class="form-field term-group">
+       <label for="developer_Whatsapp"><?php _e( 'Whatsapp', 'showcase' ); ?></label>
+       <input type="text" name="developer_Whatsapp">
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
    </div>      
 
 
@@ -93,6 +120,7 @@ if( ! class_exists( 'Showcase_Taxonomy_Images' ) ) {
        if (isset($_POST['developer_email'])) {
          add_term_meta( $term_id, 'developer_email', $_POST['developer_email'], true );
        }
+<<<<<<< HEAD
 
       if (!empty($_POST['featured_developer'])) {
             update_post_meta( $term_id, 'featured_developer', esc_attr( $_POST['featured_developer'] ) );
@@ -102,6 +130,8 @@ if( ! class_exists( 'Showcase_Taxonomy_Images' ) ) {
       }
 
 
+=======
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
        if (isset($_POST['developer_Whatsapp'])) {
          add_term_meta( $term_id, 'developer_Whatsapp', $_POST['developer_Whatsapp'], true );
        }       
@@ -115,9 +145,12 @@ if( ! class_exists( 'Showcase_Taxonomy_Images' ) ) {
      */
     public function update_category_image( $term, $taxonomy ) { ?>
 
+<<<<<<< HEAD
 
       <?php if ($taxonomy != 'development'): ?>
 
+=======
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
       <tr>
         <th scope="row">
           <label for="developer_image_id"><?php _e( 'Phone', 'showcase' ); ?></label>
@@ -147,6 +180,7 @@ if( ! class_exists( 'Showcase_Taxonomy_Images' ) ) {
           <input type="text" name="developer_Whatsapp" value="<?php echo $developer_Whatsapp; ?>">
         </td>
       </tr>     
+<<<<<<< HEAD
       <?php endif; ?>
 
       <tr>
@@ -159,6 +193,8 @@ if( ! class_exists( 'Showcase_Taxonomy_Images' ) ) {
           <input type="checkbox" name="featured_developer" value="1" <?php echo (!empty($featured_developer)) ? 'checked' : '' ; ?>>
         </td>
       </tr>     
+=======
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
 
 
 
@@ -201,6 +237,7 @@ if( ! class_exists( 'Showcase_Taxonomy_Images' ) ) {
        update_term_meta( $term_id, 'developer_Whatsapp', $_POST['developer_Whatsapp'] );
      }     
 
+<<<<<<< HEAD
     if (!empty($_POST['featured_developer'])) {
     update_term_meta( $term_id, 'featured_developer', esc_attr( $_POST['featured_developer'] ) );
     } 
@@ -208,6 +245,8 @@ if( ! class_exists( 'Showcase_Taxonomy_Images' ) ) {
     delete_term_meta( $term_id, 'featured_developer');
     }
 
+=======
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
 
      if( isset( $_POST['developer_image_id'] ) && '' !== $_POST['developer_image_id'] ){
        update_term_meta( $term_id, 'developer_image_id', absint( $_POST['developer_image_id'] ) );
@@ -216,17 +255,26 @@ if( ! class_exists( 'Showcase_Taxonomy_Images' ) ) {
      }
    }
  
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
    /**
     * Enqueue styles and scripts
     * @since 1.0.0
     */
    public function add_script() {
+<<<<<<< HEAD
      if(!isset( $_GET['taxonomy'] )) {
        return;
      } 
 
      ?>
+=======
+     if( ! isset( $_GET['taxonomy'] ) || $_GET['taxonomy'] != 'developer' ) {
+       return;
+     } ?>
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
      <script> jQuery(document).ready( function($) {
        _wpMediaViewsL10n.insertIntoPost = '<?php _e( "Insert", "showcase" ); ?>';
        function ct_media_upload(button_class) {

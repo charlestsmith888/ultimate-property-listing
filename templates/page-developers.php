@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<<<<<<< HEAD
 <?php
 $development = get_terms('developer', array('orderby' => 'slug', 'hide_empty' => true));
 ?>
@@ -17,30 +18,59 @@ $development = get_terms('developer', array('orderby' => 'slug', 'hide_empty' =>
 
 <div class="main-contents">
     <ul class="width-25 developers">
+=======
+
+
+
+
+
+
+
+<?php  
+$development = get_terms('developer', array('orderby' => 'slug', 'hide_empty' => true)); 
+?>
+
+<div class="main-content">
+    <h1>LATEST OFF PLAN PROPERTIES</h1>
+    <ul class="width-33">
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
         <?php
         foreach ($development as $key):
             $developer_phone = get_term_meta( $key->term_id, 'developer_phone', true );
             $developer_email = get_term_meta( $key->term_id, 'developer_email', true );
             $developer_Whatsapp = get_term_meta( $key->term_id, 'developer_Whatsapp', true );
             $image_id = get_term_meta( $key->term_id, 'developer_image_id', true );
+<<<<<<< HEAD
 
             // pr(wp_get_attachment_metadata($image_id));
 
+=======
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
             ?>
             <li>
                 <div class="inner-box">
                     <div class="inner-box-img">
                         <a href="<?php echo site_url('/developer/'.$key->slug); ?>">
                             <?php if( $image_id ) {
+<<<<<<< HEAD
                                 $thumbnail = wp_get_attachment_image_src($image_id,'thumbnail', true); ?>
+=======
+                                $thumbnail = wp_get_attachment_image_src($image_id,'full', true); ?>
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
                                 <img src="<?php echo $thumbnail[0]; ?>" alt="">
                             <?php } ?>
                         </a>
                     </div>
                     <div class="grey-area">
+<<<<<<< HEAD
                         <a href="#" data-phone="<?php echo $developer_phone;  ?>" data-name="<?php echo $key->name;  ?>" href="#" class="btn-modal" data-toggleModal="myModal1"><i class="fa fa-phone"></i></a>
                         <a href="https://web.whatsapp.com/send?phone=<?php echo $developer_Whatsapp; ?>&amp;text=Hi, I am Interested in 'Amora in Golf Verde'. Kindly let me know when we can meet and discuss about the project. Thank you." class="whatsapp-anchor"><i class="fa fa-whatsapp"></i></a>
                         <a href="#" data-whatsapp="<?php echo $developer_email; ?>" class="btn-modal" data-toggleModal="myModal2"><i class="fa fa-envelope"></i></a>
+=======
+                        <a href="#" data-phone="<?php echo $developer_phone;  ?>"><i class="fa fa-phone"></i></a>
+                        <a href="#" data-phone="<?php echo $developer_email;  ?>"><i class="fa fa-whatsapp"></i></a>
+                        <a href="#" data-phone="<?php echo $developer_Whatsapp;  ?>"><i class="fa fa-envelope"></i></a>
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -48,6 +78,7 @@ $development = get_terms('developer', array('orderby' => 'slug', 'hide_empty' =>
         <?php endforeach; ?>
     </ul>
 </div>
+<<<<<<< HEAD
 <div style="clear: both;"></div>
 
 
@@ -181,3 +212,11 @@ jQuery(document).on('submit', '.submitform', function(event) {
 });
 
 </script>
+=======
+
+
+
+
+
+<?php get_footer(); ?>
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e

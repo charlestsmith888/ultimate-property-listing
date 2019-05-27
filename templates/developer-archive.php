@@ -10,6 +10,7 @@
 * @version 1.0
 */
 get_header(); ?>
+<<<<<<< HEAD
 
 
 
@@ -18,6 +19,10 @@ get_header(); ?>
 		<span></span>
 	</div>
 
+=======
+<div class="main-content">
+	<h1>LATEST OFF PLAN PROPERTIES</h1>
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
 	<ul class="width-50">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 

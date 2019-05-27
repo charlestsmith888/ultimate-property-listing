@@ -42,6 +42,7 @@ class Ul_custom_fields{
 			'advanced',
 			'high'
 		);
+<<<<<<< HEAD
 
 		add_meta_box(
 			'check_featured',
@@ -84,6 +85,9 @@ class Ul_custom_fields{
 
 
 
+=======
+	}
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
 	public function price_section_html( $post) {
 		wp_nonce_field( '_price_section_nonce', 'price_section_nonce' ); ?>
 			<p>
@@ -167,10 +171,13 @@ class Ul_custom_fields{
 
 
 		<script>
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
   jQuery(document).on('click', '.choosebtn', function( event ){
     event.preventDefault();
 
@@ -240,6 +247,7 @@ frame.open();
 			update_post_meta( $post_id, 'Price_Per_Sqft', esc_attr( $_POST['Price_Per_Sqft'] ) );
 		if ( isset( $_POST['Area_from'] ) )
 			update_post_meta( $post_id, 'Area_from', esc_attr( $_POST['Area_from'] ) );
+<<<<<<< HEAD
 		
 		if (!empty($_POST['is_featured_field'])) {
 			update_post_meta( $post_id, 'is_featured_field', esc_attr( $_POST['is_featured_field'] ) );
@@ -252,6 +260,8 @@ frame.open();
 		} else {
 			delete_post_meta( $post_id, 'is_sold_field');
 		}
+=======
+>>>>>>> 0796b7e637f2902f6f5b13d0be81d13ff22f762e
 
 		if ( isset( $_POST['property_pdf'] ) )
 			update_post_meta( $post_id, 'property_pdf', esc_attr( $_POST['property_pdf'] ) );
